@@ -21,8 +21,8 @@
 		"behat/behat" : "*"
 	},
 	"autoload" : {
-		"psr-4" : {
-			"ReportPortal\\" : "src/"
-		}
+		"classmap" : [
+			"src/"
+		]
 	}
 }
