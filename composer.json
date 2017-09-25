@@ -1,0 +1,28 @@
+{
+	"name" : "reportportal/behat",
+	"type" : "library",
+	"description" : "Specific classes to integrate Behat-baset test framework with Report Portal (http://reportportal.io/).",
+	"keywords" : [
+		"Report",
+		"Reporting",
+		"Report Portal",
+		"Behat"
+	],
+	"homepage" : "https://github.com/Mikalai-Kabzar/ReportPortal-Behat",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Kabzar Mikalai",
+			"email" : "loki.engine@mail.ru",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"reportportal/basic" : "dev-master",
+		"behat/behat" : "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"ReportPortal-Behat\\" : "src/"
+		}
+	}
+}
