@@ -93,7 +93,7 @@ class BehatReportPortalService
     {
         $featureName = $event->getFeature()->getTitle();
         $keyWord = $event->getFeature()->getKeyword();
-        self::$httpService->createFeatureItem($keyWord . ' : ' . $featureName, '');
+        self::$httpService->createFeatureItem($keyWord . ' : ' . $featureName);
     }
 
     /**
