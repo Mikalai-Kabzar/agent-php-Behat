@@ -5,12 +5,22 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="PHARS">
+      <library name="PHP" type="php">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/vendor/symfony/dependency-injection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/symfony/yaml" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/vendor/symfony/dependency-injection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/symfony/yaml" />
         </SOURCES>
       </library>
     </orderEntry>
