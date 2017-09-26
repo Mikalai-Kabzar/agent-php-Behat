@@ -176,7 +176,7 @@ class BehatReportPortalService
                 $lastFailedStep . '\'.', self::$stackTraceMessage);
         }
         $status = self::getEventStatus($event);
-        self::$httpService->finishScrenarioItem($status);
+        self::$httpService->finishScenarioItem($status);
     }
 
     /**
