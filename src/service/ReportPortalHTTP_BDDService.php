@@ -92,7 +92,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *            - scenario status
      * @return ResponseInterface - result of request
      */
-    public static function finishScrenarioItem(string $scenarioStatus)
+    public static function finishScenarioItem(string $scenarioStatus)
     {
         $result = self::finishItem(self::$scenarioItemID, $scenarioStatus, '');
         self::$scenarioItemID = self::EMPTY_ID;

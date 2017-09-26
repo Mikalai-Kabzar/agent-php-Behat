@@ -172,7 +172,8 @@ class BehatReportPortalService
             $keyWord = $value->getKeyword();
             $stepName = $value->getText();
             self::$httpService->createStepItem($keyWord . ' : ' . $stepName);
-            self::$httpService->finishStepItem(ItemStatusesEnum::SKIPPED, 'SKIPPED. Skipped due to failure of \'' . $lastFailedStep . '\'.', AssertService::getStackTraceMessage());
+            self::$httpService->finishStepItem(ItemStatusesEnum::SKIPPED, 'SKIPPED. Skipped due to failure of \'' .
+                $lastFailedStep . '\'.', self::$stackTraceMessage);
         }
         $status = self::getEventStatus($event);
         self::$httpService->finishScrenarioItem($status);
@@ -200,7 +201,7 @@ class BehatReportPortalService
     public static function finishLaunch(AfterSuiteScope $event)
     {
         $status = self::getEventStatus($event);
-        self::$httpService->finishRootItem($status);
+        self::$httpService->finishRootItem();
         self::$httpService->finishTestRun($status);
     }
 
@@ -217,15 +218,16 @@ class BehatReportPortalService
         $statusCode = $event->getTestResult()->getResultCode();
         switch ($statusCode) {
             case TestResults::PASSED:
-                $status = ItemStatusesEnum::PASSED;
+                return ItemStatusesEnum::PASSED;
                 break;
             case TestResults::FAILED:
-                $status = ItemStatusesEnum::FAILED;
+                return ItemStatusesEnum::FAILED;
                 break;
             case TestResults::SKIPPED:
-                $status = ItemStatusesEnum::SKIPPED;
+                return ItemStatusesEnum::SKIPPED;
                 break;
+            default :
+                return null;
         }
-        return $status;
     }
 }
