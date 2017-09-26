@@ -4,25 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/composer" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/psr7" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/psr/http-message" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/symfony/yaml" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/composer" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/guzzlehttp/psr7" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/psr/http-message" />
-          <root url="file://$MODULE_DIR$/../BDD-Behat-Ticketmaster/vendor/reportportal/basic/vendor/symfony/yaml" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

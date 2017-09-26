@@ -1,4 +1,5 @@
 <?php
+
 namespace BehatReportPortal;
 
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
@@ -13,13 +14,12 @@ use Behat\Testwork\Hook\Scope\HookScope;
 use Behat\Testwork\Tester\Result\TestResults;
 use ReportPortalBasic\Enum\ItemStatusesEnum;
 use ReportPortalBasic\Service\ReportPortalHTTPService;
-use TestFramework\Services\AssertService;
 
 /**
  * Service to build collaborations between Behat and Report portal.
  *
  * @author Mikalai_Kabzar
- *        
+ *
  */
 class BehatReportPortalService
 {
@@ -28,11 +28,11 @@ class BehatReportPortalService
 
     private static $arrayWithSteps = array();
 
-    private static $arrayWithScenarios = array();
-
-    private static $arrayWithFeatures = array();
-
     private static $launchPrefix = 'Test run - ';
+
+    private static $assertMessage = '';
+
+    private static $stackTraceMessage = '';
 
     /**
      *
@@ -43,8 +43,24 @@ class BehatReportPortalService
     public $result = 0;
 
     /**
+     * @param string $assertMessage
+     */
+    public static function setAssertMessage(string $assertMessage)
+    {
+        self::$assertMessage = $assertMessage;
+    }
+
+    /**
+     * @param string $stackTraceMessage
+     */
+    public static function setStackTraceMessage(string $stackTraceMessage)
+    {
+        self::$stackTraceMessage = $stackTraceMessage;
+    }
+
+    /**
      * Set launch prefix
-     * 
+     *
      * @param string $launchPrefix
      *            - launch prefix to set
      */
@@ -91,12 +107,11 @@ class BehatReportPortalService
         self::$arrayWithSteps = array();
         $keyWord = $event->getScenario()->getKeyword();
         $scenarioTitle = $event->getScenario()->getTitle();
-        $description = '';
         if (self::SCENARIO_OUTLINE_KEYWORD == $keyWord) {
             $scenarios = $event->getFeature()->getScenarios();
             $scenarioLine = $event->getScenario()->getLine();
             $scenarioIndex = 0;
-            for ($i = 0; $i < sizeof($scenarios); $i ++) {
+            for ($i = 0; $i < sizeof($scenarios); $i++) {
                 if ($scenarioLine >= $scenarios[$i]->getLine()) {
                     $scenarioIndex = $i;
                 }
@@ -134,7 +149,7 @@ class BehatReportPortalService
     {
         array_push(self::$arrayWithSteps, $event->getStep());
         $status = self::getEventStatus($event);
-        self::$httpService->finishStepItem($status, AssertService::getAssertMessage(), AssertService::getStackTraceMessage());
+        self::$httpService->finishStepItem($status, self::$assertMessage, self::$stackTraceMessage);
     }
 
     /**

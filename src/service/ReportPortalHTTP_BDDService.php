@@ -1,4 +1,5 @@
 <?php
+
 namespace BehatReportPortal;
 
 use Psr\Http\Message\ResponseInterface;
