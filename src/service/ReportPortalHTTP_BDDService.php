@@ -138,6 +138,6 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      */
     public static function addLogMessageWithPicture(string $message, string $logLevel, string $pictureAsString)
     {
-        ReportPortalHTTPService::addPictureToLogMessage($pictureAsString, self::$stepItemID, $message, $logLevel, self::pictureContentType);
+        ReportPortalHTTPService::addLogMessageWithPicture(self::$stepItemID, $message, $logLevel, $pictureAsString, self::pictureContentType);
     }
 }
