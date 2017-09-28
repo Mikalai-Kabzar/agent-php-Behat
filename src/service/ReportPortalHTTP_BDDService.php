@@ -84,7 +84,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         }
         if ($itemStatus == ItemStatusesEnum::FAILED) {
             if ($pictureAsString != null) {
-                self::addLogMessageWithPicture($stackTrace, LogLevelsEnum::ERROR, $pictureAsString);
+                self::addLogMessagePlusPicture($stackTrace, LogLevelsEnum::ERROR, $pictureAsString);
             } else {
                 self::addLogMessage(self::$stepItemID, $stackTrace, LogLevelsEnum::ERROR);
             }
@@ -136,7 +136,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *
      * @return ResponseInterface|void
      */
-    public static function addLogMessageWithPicture(string $message, string $logLevel, string $pictureAsString)
+    public static function addLogMessagePlusPicture(string $message, string $logLevel, string $pictureAsString)
     {
         ReportPortalHTTPService::addLogMessageWithPicture(self::$stepItemID, $message, $logLevel, $pictureAsString, self::pictureContentType);
     }
