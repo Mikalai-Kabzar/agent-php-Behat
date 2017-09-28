@@ -69,7 +69,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *            - stack trace
      * @return ResponseInterface - result of request
      */
-    public static function finishStepItem(string $itemStatus, string $description, string $stackTrace, string $pictureAsString)
+    public static function finishStepItem(string $itemStatus, string $description, string $stackTrace, $pictureAsString)
     {
         $actualDescription = '';
         if ($itemStatus == ItemStatusesEnum::SKIPPED) {
