@@ -114,4 +114,15 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         self::$featureItemID = self::EMPTY_ID;
         return $result;
     }
+    
+    /**
+     * Add log message with picture.
+     * @param string $message
+     * @param string $logLevel of log
+     * @param string $pictureAsString - picture content
+     */
+    public static function addLogMessagePicture(string $message, string $logLevel, string $pictureAsString)
+    {
+        ReportPortalHTTPService::addLogMessageWithPicture($pictureAsString,self::$stepItemID,$message,$logLevel,'png');
+    }
 }
