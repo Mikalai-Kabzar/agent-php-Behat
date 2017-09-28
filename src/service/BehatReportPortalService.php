@@ -145,7 +145,7 @@ class BehatReportPortalService
      * @param AfterStepScope $event
      *            - after step event
      */
-    public static function finishStep(AfterStepScope $event, string $pictureAsString)
+    public static function finishStep(AfterStepScope $event, $pictureAsString)
     {
         array_push(self::$arrayWithSteps, $event->getStep());
         $status = self::getEventStatus($event);
