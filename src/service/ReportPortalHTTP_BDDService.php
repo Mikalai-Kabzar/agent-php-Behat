@@ -5,6 +5,7 @@ namespace BehatReportPortal;
 use Psr\Http\Message\ResponseInterface;
 use ReportPortalBasic\Enum\ItemStatusesEnum;
 use ReportPortalBasic\Enum\ItemTypesEnum;
+use ReportPortalBasic\Enum\LogLevelsEnum;
 use ReportPortalBasic\Service\ReportPortalHTTPService;
 
 /**
@@ -13,12 +14,14 @@ use ReportPortalBasic\Service\ReportPortalHTTPService;
  */
 class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
 {
+    private const pictureContentType = 'png';
 
     /**
      * Create feature item
      *
      * @param string $name
      *            - feature name
+     *
      * @return ResponseInterface - result of request
      */
     public static function createFeatureItem(string $name)
@@ -35,6 +38,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *            - scenario name
      * @param string $description
      *            - sceanrio description
+     *
      * @return ResponseInterface - result of request
      */
     public static function createScenarioItem(string $name, string $description)
@@ -49,6 +53,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *
      * @param string $name
      *            - step name
+     *
      * @return ResponseInterface - result of request
      */
     public static function createStepItem(string $name)
@@ -67,24 +72,21 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *            - step description
      * @param string $stackTrace
      *            - stack trace
+     *
      * @return ResponseInterface - result of request
      */
     public static function finishStepItem(string $itemStatus, string $description, string $stackTrace, $pictureAsString)
     {
         $actualDescription = '';
         if ($itemStatus == ItemStatusesEnum::SKIPPED) {
-            if ($pictureAsString != null) {
-                self::addLogMessagePicture($description, 'info', $pictureAsString);
-            } else {
-                self::addLogMessage(self::$stepItemID, $description, 'info');    
-            }       
+            self::addLogMessage(self::$stepItemID, $description, LogLevelsEnum::INFO);
             $actualDescription = $description;
         }
         if ($itemStatus == ItemStatusesEnum::FAILED) {
             if ($pictureAsString != null) {
-                self::addLogMessagePicture($stackTrace, 'error', $pictureAsString);
+                self::addLogMessageWithPicture($stackTrace, LogLevelsEnum::ERROR, $pictureAsString);
             } else {
-                self::addLogMessage(self::$stepItemID, $stackTrace, 'error');
+                self::addLogMessage(self::$stepItemID, $stackTrace, LogLevelsEnum::ERROR);
             }
             $actualDescription = $description;
         }
@@ -98,6 +100,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *
      * @param string $scenarioStatus
      *            - scenario status
+     *
      * @return ResponseInterface - result of request
      */
     public static function finishScenarioItem(string $scenarioStatus)
@@ -114,6 +117,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
      *            - feature status
      * @param string $description
      *            - feature item description
+     *
      * @return ResponseInterface - result of request
      */
     public static function finishFeatureItem(string $testStatus, string $description)
@@ -122,16 +126,18 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         self::$featureItemID = self::EMPTY_ID;
         return $result;
     }
-    
+
     /**
      * Add log message with picture.
      *
      * @param string $message
      * @param string $logLevel of log
      * @param string $pictureAsString - picture content
+     *
+     * @return ResponseInterface|void
      */
-    public static function addLogMessagePicture(string $message, string $logLevel, string $pictureAsString)
+    public static function addLogMessageWithPicture(string $message, string $logLevel, string $pictureAsString)
     {
-        ReportPortalHTTPService::addPictureToLogMessage($pictureAsString, self::$stepItemID, $message, $logLevel, 'png');
+        ReportPortalHTTPService::addPictureToLogMessage($pictureAsString, self::$stepItemID, $message, $logLevel, self::pictureContentType);
     }
 }

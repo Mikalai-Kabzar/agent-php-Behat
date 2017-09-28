@@ -5,12 +5,12 @@ namespace BehatReportPortal;
 use Behat\Testwork\Hook\Scope\HookScope;
 
 /**
- * Basic report portal annotations enum for Behat
+ * Basic report portal annotations for Behat
  *
  * @author Mikalai_Kabzar
  *
  */
-interface BehatReportPortalAnnotationsEnum
+interface BehatReportPortalAnnotations
 {
 
     /**
