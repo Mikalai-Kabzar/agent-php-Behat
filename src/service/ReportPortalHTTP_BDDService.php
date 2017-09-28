@@ -74,7 +74,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         $actualDescription = '';
         if ($itemStatus == ItemStatusesEnum::SKIPPED) {
             if ($pictureAsString != null) {
-                self::addLogMessagePicture($description, 'info', $pictureAsString);
+                self::addPictureToLogMessage($description, 'info', $pictureAsString);
             } else {
                 self::addLogMessage(self::$stepItemID, $description, 'info');    
             }       
@@ -82,7 +82,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         }
         if ($itemStatus == ItemStatusesEnum::FAILED) {
             if ($pictureAsString != null) {
-                self::addLogMessagePicture($stackTrace, 'error', $pictureAsString);
+                self::addPictureToLogMessage($stackTrace, 'error', $pictureAsString);
             } else {
                 self::addLogMessage(self::$stepItemID, $stackTrace, 'error');
             }
