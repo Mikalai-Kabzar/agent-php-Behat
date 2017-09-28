@@ -74,7 +74,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         $actualDescription = '';
         if ($itemStatus == ItemStatusesEnum::SKIPPED) {
             if ($pictureAsString != null) {
-                self::addPictureToLogMessage($description, 'info', $pictureAsString);
+                self::addLogMessagePicture($description, 'info', $pictureAsString);
             } else {
                 self::addLogMessage(self::$stepItemID, $description, 'info');    
             }       
@@ -82,7 +82,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         }
         if ($itemStatus == ItemStatusesEnum::FAILED) {
             if ($pictureAsString != null) {
-                self::addPictureToLogMessage($stackTrace, 'error', $pictureAsString);
+                self::addLogMessagePicture($stackTrace, 'error', $pictureAsString);
             } else {
                 self::addLogMessage(self::$stepItemID, $stackTrace, 'error');
             }
@@ -125,12 +125,13 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
     
     /**
      * Add log message with picture.
+     *
      * @param string $message
      * @param string $logLevel of log
      * @param string $pictureAsString - picture content
      */
     public static function addLogMessagePicture(string $message, string $logLevel, string $pictureAsString)
     {
-        ReportPortalHTTPService::addLogMessageWithPicture($pictureAsString,self::$stepItemID,$message,$logLevel,'png');
+        ReportPortalHTTPService::addPictureToLogMessage($pictureAsString, self::$stepItemID, $message, $logLevel, 'png');
     }
 }
