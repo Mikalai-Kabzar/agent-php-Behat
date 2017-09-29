@@ -94,7 +94,7 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         self::$stepItemID = self::EMPTY_ID;
         return $result;
     }
-
+    
     /**
      * Finish scenario item
      *
@@ -126,7 +126,17 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
         self::$featureItemID = self::EMPTY_ID;
         return $result;
     }
-
+    
+    /**
+     * Cancel item due to error with trace
+     *
+     * @param string $itemID - item ID
+     * @param string $trace - trace info
+     */
+    public static function cancelItem(string $itemID, string $trace) {
+        self::finishItem($itemID, ItemStatusesEnum::CANCELLED, 'Cancelled due to unexpected error: '.$trace);
+    }
+    
     /**
      * Add log message with picture.
      *
