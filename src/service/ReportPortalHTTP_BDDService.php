@@ -15,6 +15,8 @@ use ReportPortalBasic\Service\ReportPortalHTTPService;
 class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
 {
     private const pictureContentType = 'png';
+    
+    private const HTTPStatusCodeOK = '200';
 
     /**
      * Create feature item
@@ -91,7 +93,9 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
             $actualDescription = $description;
         }
         $result = self::finishItem(self::$stepItemID, $itemStatus, $actualDescription);
-        self::$stepItemID = self::EMPTY_ID;
+        if ($result->getStatusCode() == self::HTTPStatusCodeOK){
+            self::$stepItemID = self::EMPTY_ID;
+        }
         return $result;
     }
     
@@ -106,7 +110,9 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
     public static function finishScenarioItem(string $scenarioStatus)
     {
         $result = self::finishItem(self::$scenarioItemID, $scenarioStatus, '');
-        self::$scenarioItemID = self::EMPTY_ID;
+        if ($result->getStatusCode() == self::HTTPStatusCodeOK){
+            self::$scenarioItemID = self::EMPTY_ID;
+        }
         return $result;
     }
 
@@ -123,7 +129,9 @@ class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
     public static function finishFeatureItem(string $testStatus, string $description)
     {
         $result = self::finishItem(self::$featureItemID, $testStatus, $description);
-        self::$featureItemID = self::EMPTY_ID;
+        if ($result->getStatusCode() == self::HTTPStatusCodeOK){
+            self::$featureItemID = self::EMPTY_ID;
+        }
         return $result;
     }
     
