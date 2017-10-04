@@ -14,9 +14,9 @@ use ReportPortalBasic\Service\ReportPortalHTTPService;
  */
 class ReportPortalHTTP_BDDService extends ReportPortalHTTPService
 {
-    private const pictureContentType = 'png';
+    const pictureContentType = 'png';
     
-    private const HTTPStatusCodeOK = '200';
+    const HTTPStatusCodeOK = '200';
 
     /**
      * Create feature item
