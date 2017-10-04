@@ -24,7 +24,7 @@ use ReportPortalBasic\Service\ReportPortalHTTPService;
 class BehatReportPortalService
 {
 
-    private const SCENARIO_OUTLINE_KEYWORD = 'Example';
+    const SCENARIO_OUTLINE_KEYWORD = 'Example';
 
     private static $arrayWithSteps = array();
 
