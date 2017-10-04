@@ -173,7 +173,7 @@ class BehatReportPortalService
             $stepName = $value->getText();
             self::$httpService->createStepItem($keyWord . ' : ' . $stepName);
             self::$httpService->finishStepItem(ItemStatusesEnum::SKIPPED, 'SKIPPED. Skipped due to failure of \'' .
-                $lastFailedStep . '\'.', self::$stackTraceMessage);
+                $lastFailedStep . '\'.', self::$stackTraceMessage, '');
         }
         $status = self::getEventStatus($event);
         self::$httpService->finishScenarioItem($status);
