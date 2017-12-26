@@ -202,7 +202,16 @@ class BehatReportPortalService
     {
         $status = self::getEventStatus($event);
         self::$httpService->finishRootItem();
-        self::$httpService->finishTestRun($status);
+        $result = self::$httpService->finishTestRun($status);
+        $maxCount = 5;
+        $counter = 0;
+        $isCompletedCorrect = false;
+        while (!$isCompletedCorrect and $counter < $maxCount) {
+            $counter++;
+            if (!self::$httpService->finishAll($result)) {
+                $result = self::$httpService->finishTestRun($status);
+            };
+        }
     }
 
     /**
