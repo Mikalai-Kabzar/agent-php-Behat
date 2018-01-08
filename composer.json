@@ -17,7 +17,7 @@
 		}
 	],
 	"require" : {
-		"reportportal/basic" : "dev-master",
+		"reportportal/basic" : "1.0.x-dev",
 		"behat/behat" : "*"
 	},
 	"autoload" : {
