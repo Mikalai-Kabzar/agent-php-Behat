@@ -79,7 +79,7 @@ class BehatReportPortalService
     {
         $suiteName = $event->getSuite()->getName();
         self::$httpService = new ReportPortalHTTP_BDDService();
-        self::$httpService->launchTestRun(self::$launchPrefix . $suiteName, '', ReportPortalHTTPService::DAFAULT_LAUNCH_MODE, array());
+        self::$httpService->launchTestRun(self::$launchPrefix . $suiteName, '', ReportPortalHTTPService::DEFAULT_LAUNCH_MODE, array());
         self::$httpService->createRootItem($suiteName, '', array());
     }
 
