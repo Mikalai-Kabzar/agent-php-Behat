@@ -28,15 +28,35 @@ Use as an example: https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/bl
 ```
 Use as an example: https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/composer.json
 
-#### 3) Inherit your context files from "BaseFeatureContext" class:
-
-```
-
-```
-
-https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/features/bootstrap/BaseFeatureContext.php
-
-#### 4) Execute command:
+#### 3) Execute command:
 ```
             composer update
 ```
+
+#### 4) Inherit your context files from "BaseFeatureContext" class:
+
+```
+<?php
+use Behat\Gherkin\Node\TableNode;
+use TestFramework\Pages\Application\MainPage;
+use TestFramework\Pages\Application\SignInPage;
+use TestFramework\Services\AssertService;
+use TestFramework\Services\WebElementsService;
+/**
+ * Defines Application account context.
+ */
+class AccountContext extends BaseFeatureContext {
+    /**
+     * @When I hover on My account button
+     */
+    public function iHoverOnMyAccountButton() {
+        MainPage::getMyAccountDropDown()->hoverButton();
+    }
+
+```
+https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/features/bootstrap/AccountContext.php
+https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/features/bootstrap/BaseFeatureContext.php
+
+Note: You can implement your own version of "BaseFeatureContext" class.
+
+#### 5) Enjoy
