@@ -52,7 +52,7 @@ class AccountContext extends BaseFeatureContext {
     public function iHoverOnMyAccountButton() {
         MainPage::getMyAccountDropDown()->hoverButton();
     }
-
+	...
 ```
 https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/features/bootstrap/AccountContext.php
 https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/features/bootstrap/BaseFeatureContext.php
