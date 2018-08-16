@@ -18,16 +18,18 @@ timeZone: .000+02:00
 Use as an example: https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/config.yaml
 
 #### 2) Update your project's composer.json file with next data:
+
 ```
 	"require" : {
-    ...
+    		...
 		"reportportal/behat" : "dev-master",
-    ...
+    		...
 	},
 ```
 Use as an example: https://github.com/Mikalai-Kabzar/BDD-Behat-Test-framework/blob/master/composer.json
 
 #### 3) Inherit your context files from "BaseFeatureContext" class:
+
 ```
 
 ```
