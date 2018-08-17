@@ -1,5 +1,5 @@
 {
-	"name" : "reportportal/behat",
+	"name" : "mkabzar/behat",
 	"type" : "library",
 	"description" : "Specific classes to integrate Behat-baset test framework with Report Portal (http://reportportal.io/).",
 	"keywords" : [
