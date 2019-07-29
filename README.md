@@ -21,7 +21,7 @@ timeZone – your time zone.
 
 ![](screens/rpprofile2.png)
 
-### 2) Update composer.json file with "reportportal/behat" : "1.0.x-dev", dependency.
+### 2) Update composer.json file of your framework with "reportportal/behat" : "1.0.x-dev", dependency.
 
 ![](screens/composer.png)
 
