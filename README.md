@@ -31,7 +31,9 @@ Note: "reportportal/behat" : "1.0.x-dev", was tested for behat 3.4.1 and phpunit
 
 ![](screens/composerupdate.png)
 
-### 4) Update/create your basic feature context class with next dependencies.
+### 4) Update/create your "base feature context" class with next dependencies.
+
+Note: BaseFeatureContext is a class that extends RawMinkContext class and implements Comtext and SnippetAcceptingContext interfaces. You can't create a Behat-based framework without this class.
 
     use BehatReportPortal\BehatReportPortalAnnotations;
     use BehatReportPortal\BehatReportPortalService;
