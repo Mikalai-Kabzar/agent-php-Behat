@@ -1,8 +1,8 @@
-# Reporting with Report Portal and Behat agent.
+# Reporting with Report Portal agent for the Behat framework.
 
 ## Preconditions
 1) Behat framework.
-2) Report Portal (RP) account.
+2) Report Portal (RP) instance.
 
 ## Steps
 
