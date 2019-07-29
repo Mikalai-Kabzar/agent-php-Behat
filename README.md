@@ -33,9 +33,9 @@ Note: "reportportal/behat" : "1.0.x-dev", was tested for behat 3.4.1 and phpunit
 
 ### 4) Update/create your basic feature context class with next dependencies.
 
-use BehatReportPortal\BehatReportPortalAnnotations;
-use BehatReportPortal\BehatReportPortalService;
-use ReportPortalBasic\Service\ReportPortalHTTPService;
+    use BehatReportPortal\BehatReportPortalAnnotations;
+    use BehatReportPortal\BehatReportPortalService;
+    use ReportPortalBasic\Service\ReportPortalHTTPService;
 
 ![](screens/integration1.png)
 
