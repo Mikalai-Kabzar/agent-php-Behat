@@ -41,7 +41,7 @@ Note: BaseFeatureContext is a class that extends RawMinkContext class and implem
 
 ![](screens/integration1.png)
 
-The basic context class should implement BehatReportPortalAnnotations.
+The base feature context class should implement BehatReportPortalAnnotations.
 
 ### 5) Implement BehatReportPortalAnnotations’ methods in the basic context class (BaseFeatureContext on the picture above).
 
