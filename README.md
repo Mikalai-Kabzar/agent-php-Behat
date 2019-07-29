@@ -15,21 +15,21 @@ projectName – name of project to create launches.
 
 timeZone – your time zone.
 
-![](screens/config.png)
+![](screens/config_1.png)
 
-![](screens/rpprofile.png)
+![](screens/rp_profile_1.png)
 
-![](screens/rpprofile2.png)
+![](screens/rp_profile_2.png)
 
 ### 2) Update composer.json file of your framework with "reportportal/behat" : "1.0.x-dev", dependency.
 
-![](screens/composer.png)
+![](screens/composer_1.png)
 
 Note: "reportportal/behat" : "1.0.x-dev", was tested for behat 3.4.1 and phpunit 3.7.30.
 
 ### 3) Open terminal in the root folder and execute “composer update” command.
 
-![](screens/composerupdate.png)
+![](screens/composer_update.png)
 
 ### 4) Update/create your "base feature context" class with next dependencies.
 
@@ -39,7 +39,7 @@ Note: BaseFeatureContext is a class that extends RawMinkContext class and implem
     use BehatReportPortal\BehatReportPortalService;
     use ReportPortalBasic\Service\ReportPortalHTTPService;
 
-![](screens/integration1.png)
+![](screens/integration_1.png)
 
 The base feature context class should implement BehatReportPortalAnnotations.
 
@@ -122,12 +122,12 @@ The base feature context class should implement BehatReportPortalAnnotations.
 
 ### 6) Each feature context class should extend BaseFeatureContext class that implements BehatReportPortalAnnotations interface and methods.
 
-![](screens/integration2.png)
+![](screens/integration_2.png)
 
 ### 7) Run auto-tests to check RP integration.
 
-![](screens/rpcheck.png)
+![](screens/rp_check_.png)
 
-![](screens/rpcheck2.png)
+![](screens/rp_check_2.png)
 
-![](screens/testexample1.png)
+![](screens/test_example_1.png)
