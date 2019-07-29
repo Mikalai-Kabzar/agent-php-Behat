@@ -1,7 +1,7 @@
 # Reporting with Report Portal agent for the Behat framework.
 
 ## Preconditions
-1) Behat framework.
+1) Behat framework (version 3.4.1).
 2) Report Portal (RP) instance.
 
 ## Steps
