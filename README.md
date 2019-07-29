@@ -6,8 +6,7 @@
 
 ## Steps
 
-### 1) Create in the Behat-based test framework root folder ‘config.yaml’ file with next fields.
-#### 1.1) Create in the Behat-based test framework root folder ‘config.yaml’ file with next fields:
+### 1) Create in the Behat-based test framework's root folder ‘config.yaml’ file with next fields:
 UUID – your own access key. 
 
 Host – RP instance address.
