@@ -126,7 +126,7 @@ The base feature context class should implement BehatReportPortalAnnotations.
 
 ### 7) Run auto-tests to check RP integration.
 
-![](screens/rp_check_.png)
+![](screens/rp_check_1.png)
 
 ![](screens/rp_check_2.png)
 
