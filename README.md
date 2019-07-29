@@ -44,15 +44,15 @@ The basic context class should implement BehatReportPortalAnnotations.
 
 ### 5) Implement BehatReportPortalAnnotations’ methods in the basic context class (BaseFeatureContext on the picture above).
 
-public static function startLaunch(HookScope $event)
-public static function startFeature(HookScope $event)
-public static function startScenario(HookScope $event)
-public static function startStep(HookScope $event)
-public static function finishStep(HookScope $event)
-public static function finishScenario(HookScope $event)
-public static function finishFeature(HookScope $event)
-public static function finishLaunch(HookScope $event)
-
+    public static function startLaunch(HookScope $event)
+    public static function startFeature(HookScope $event)
+    public static function startScenario(HookScope $event)
+    public static function startStep(HookScope $event)
+    public static function finishStep(HookScope $event)
+    public static function finishScenario(HookScope $event)
+    public static function finishFeature(HookScope $event)
+    public static function finishLaunch(HookScope $event)
+    
     public static function startLaunch(HookScope $event)
     {
         if (!ReportPortalHTTPService::isSuiteRunned()) {
